@@ -1,10 +1,10 @@
 #!/bin/sh
 ZIP_FILE=deployment.zip
-BUCKET_NAME=blog-deploy
+BUCKET_NAME=static-site-deploy
 # Lambda function name defined by CloudFormation and does not appear
 # to be overridden. The prefix will be static (using bucket name?) plus
 # the resource name in the template
-LAMBDA_FUNCTION_SEARCH=blog-deploy-DeploymentLambda-
+LAMBDA_FUNCTION_SEARCH=static-site-deploy-DeploymentLambda-
 FN_NAME=$(aws lambda list-functions --output table |\
           fgrep $LAMBDA_FUNCTION_SEARCH | \
           fgrep FunctionName |\
