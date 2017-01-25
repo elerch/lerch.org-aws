@@ -8,7 +8,7 @@ var s3ext           = require('./s3-ext');
 exports = module.exports;
 
 function copySite(src, bucket, destPrefix, cb) {
-  var copyOptions = {Bucket: bucket, ACL: 'public-read', StorageClass: 'REDUCED_REDUNDANCY'};
+  var copyOptions = {Bucket: bucket, ACL: 'public-read'};
   console.log('copying from ' + src + ' to ' + bucket + ':' + (destPrefix || '(root)'));
   s3ext.copyAllRecursive(
     src, destPrefix, 'us-west-2',
